@@ -156,9 +156,11 @@
                       <av:Size x:Key="ShapeSize">200,51</av:Size>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke insert_db workflow" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="system\insert_db.xaml">
+                  <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke insert_db workflow" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="system\insert_db.xaml">
                     <ui:InvokeWorkflowFile.Arguments>
-                      <InArgument x:TypeArguments="ui:DatabaseConnection" x:Key="in_connection_db" />
+                      <InArgument x:TypeArguments="ui:DatabaseConnection" x:Key="in_connection_db">
+                        <mva:VisualBasicValue x:TypeArguments="ui:DatabaseConnection" ExpressionText="connection_db" />
+                      </InArgument>
                       <InArgument x:TypeArguments="sd:DataTable" x:Key="in_tableInfo">
                         <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="datosProcesados" />
                       </InArgument>

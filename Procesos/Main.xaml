@@ -325,7 +325,7 @@
                     </ui:Click>
                     <ui:Check AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" Action="Check" DisplayName="Check 'check box  Coma'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Check_2">
                       <ui:Check.Target>
-                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="8e1614ed-75ce-45e6-97fc-597b6db2355d" InformativeScreenshot="43dcafad7fb3a46422a9ab03601421e8" Selector="&lt;ctrl name='Coma' role='check box' /&gt;">
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="8e1614ed-75ce-45e6-97fc-597b6db2355d" InformativeScreenshot="43dcafad7fb3a46422a9ab03601421e8" Selector="&lt;wnd app='excel.exe' cls='bosa_sdm_XL9' title='Asistente para convertir texto en columnas - paso 2 de 3' /&gt;&lt;ctrl name='Coma' role='check box' /&gt;">
                           <ui:Target.TimeoutMS>
                             <InArgument x:TypeArguments="x:Int32" />
                           </ui:Target.TimeoutMS>
