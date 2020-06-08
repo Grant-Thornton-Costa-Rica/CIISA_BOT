@@ -60,7 +60,6 @@
       <Variable x:TypeArguments="ui:DatabaseConnection" Name="connection_db" />
       <Variable x:TypeArguments="x:String" Name="compra" />
       <Variable x:TypeArguments="x:String" Name="venta" />
-      <Variable x:TypeArguments="x:String" Name="variable1" />
       <Variable x:TypeArguments="sd:DataTable" Name="datosProcesados" />
     </Flowchart.Variables>
     <sap:WorkflowViewStateService.ViewState>
