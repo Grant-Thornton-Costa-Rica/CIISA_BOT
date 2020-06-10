@@ -85,7 +85,7 @@
           <av:PointCollection x:Key="ConnectorLocation">250,350 280,350 280,150 400,150</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Ejecucion de los flujos de procesos, trasladar de Csv a fortato con la plantilla de Formulas&#xA;" DisplayName="Llamar Main de Procesos " sap:VirtualizedContainerService.HintSize="334,144" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Procesos\Main.xaml">
+      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Ejecucion de los flujos de procesos, trasladar de Csv a fortato con la plantilla de Formulas&#xA;" DisplayName="Llamar Main de Procesos " sap:VirtualizedContainerService.HintSize="200,138" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Procesos\Main.xaml">
         <ui:InvokeWorkflowFile.Arguments>
           <OutArgument x:TypeArguments="x:String" x:Key="out_name">
             <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="final_file_name" />
@@ -113,7 +113,7 @@
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <av:Point x:Key="ShapeLocation">400,124.5</av:Point>
               <av:Size x:Key="ShapeSize">200,51</av:Size>
-              <av:PointCollection x:Key="ConnectorLocation">500,175.5 500,205.5 520,205.5 520,238.5</av:PointCollection>
+              <av:PointCollection x:Key="ConnectorLocation">500,175.5 500,228.5</av:PointCollection>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Lectura del Archivo Procesado" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="system\main.xaml">
@@ -135,9 +135,9 @@
             <FlowStep x:Name="__ReferenceID0">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <av:Point x:Key="ShapeLocation">420,238.5</av:Point>
+                  <av:Point x:Key="ShapeLocation">400,228.5</av:Point>
                   <av:Size x:Key="ShapeSize">200,123</av:Size>
-                  <av:PointCollection x:Key="ConnectorLocation">520,361.5 520,394.5</av:PointCollection>
+                  <av:PointCollection x:Key="ConnectorLocation">500,351.5 500,384.5</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Conectamos a db y obtenemos la conexion como una variable &#xA;" DisplayName="Conectamos a db" sap:VirtualizedContainerService.HintSize="200,123" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="system\connect_db.xaml">
@@ -155,7 +155,7 @@
                 <FlowStep x:Name="__ReferenceID3">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <av:Point x:Key="ShapeLocation">420,394.5</av:Point>
+                      <av:Point x:Key="ShapeLocation">400,384.5</av:Point>
                       <av:Size x:Key="ShapeSize">200,51</av:Size>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
