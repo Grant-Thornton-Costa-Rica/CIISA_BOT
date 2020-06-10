@@ -85,7 +85,7 @@
           <av:PointCollection x:Key="ConnectorLocation">250,350 280,350 280,150 400,150</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Ejecucion de los flujos de procesos, trasladar de Csv a fortato con la plantilla de Formulas&#xA;" DisplayName="Llamar Main de Procesos " sap:VirtualizedContainerService.HintSize="200,138" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Procesos\Main.xaml">
+      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Ejecucion de los flujos de procesos, trasladar de Csv a fortato con la plantilla de Formulas&#xA;" DisplayName="Llamar Main de Procesos " sap:VirtualizedContainerService.HintSize="334,144" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Procesos\Main.xaml">
         <ui:InvokeWorkflowFile.Arguments>
           <OutArgument x:TypeArguments="x:String" x:Key="out_name">
             <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="final_file_name" />
@@ -96,9 +96,9 @@
           <InArgument x:TypeArguments="x:String" x:Key="in_tipoCambio_venta">
             <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="venta" />
           </InArgument>
-          <InArgument x:TypeArguments="sd:DataTable" x:Key="out_tarjetasDetalles">
-            <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="tarjetasDetalles" />
-          </InArgument>
+          <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_tarjetasDetalles">
+            <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="tarjetasDetalles" />
+          </OutArgument>
         </ui:InvokeWorkflowFile.Arguments>
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -116,7 +116,7 @@
               <av:PointCollection x:Key="ConnectorLocation">500,175.5 500,205.5 520,205.5 520,238.5</av:PointCollection>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Lectura del Archivo Procesado" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="system\main.xaml">
+          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Lectura del Archivo Procesado" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="system\main.xaml">
             <ui:InvokeWorkflowFile.Arguments>
               <InArgument x:TypeArguments="x:String" x:Key="in_file_name">
                 <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="final_file_name" />
