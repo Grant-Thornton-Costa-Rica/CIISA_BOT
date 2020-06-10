@@ -116,10 +116,14 @@
               <av:PointCollection x:Key="ConnectorLocation">500,175.5 500,205.5 520,205.5 520,238.5</av:PointCollection>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Lectura del Archivo Procesado" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="system\main.xaml">
+          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Lectura del Archivo Procesado" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="system\main.xaml">
             <ui:InvokeWorkflowFile.Arguments>
-              <InArgument x:TypeArguments="x:String" x:Key="in_file_name">[final_file_name]</InArgument>
-              <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dataTable">[datosProcesados]</OutArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_file_name">
+                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="final_file_name" />
+              </InArgument>
+              <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dataTable">
+                <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="datosProcesados" />
+              </OutArgument>
             </ui:InvokeWorkflowFile.Arguments>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -155,7 +159,7 @@
                       <av:Size x:Key="ShapeSize">200,51</av:Size>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke insert_db workflow" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="system\insert_db.xaml">
+                  <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke insert_db workflow" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="system\insert_db.xaml">
                     <ui:InvokeWorkflowFile.Arguments>
                       <InArgument x:TypeArguments="ui:DatabaseConnection" x:Key="in_connection_db">
                         <mva:VisualBasicValue x:TypeArguments="ui:DatabaseConnection" ExpressionText="connection_db" />
