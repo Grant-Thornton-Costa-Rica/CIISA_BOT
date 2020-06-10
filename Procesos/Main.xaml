@@ -3,7 +3,7 @@
     <x:Property Name="out_name" Type="OutArgument(x:String)" />
     <x:Property Name="in_tipoCambio_compra" Type="InArgument(x:String)" />
     <x:Property Name="in_tipoCambio_venta" Type="InArgument(x:String)" />
-    <x:Property Name="out_tarjetasDetalles" Type="InArgument(sd:DataTable)" />
+    <x:Property Name="out_tarjetasDetalles" Type="OutArgument(sd:DataTable)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
