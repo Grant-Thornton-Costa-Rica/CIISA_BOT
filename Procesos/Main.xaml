@@ -207,7 +207,7 @@
                                 <OutArgument x:TypeArguments="x:String">[nombreTarjeta]</OutArgument>
                               </Assign.To>
                               <Assign.Value>
-                                <InArgument x:TypeArguments="x:String">[finalTable.Rows(i)(0).ToString.Split(","c)(2).Split("/"c)(1) + finalTable.Rows(i)(0).ToString.Split(","c)(2).Split("/"c)(0)]</InArgument>
+                                <InArgument x:TypeArguments="x:String">[finalTable.Rows(i)(0).ToString.Split(","c)(2).Split("/"c)(1).Replace(""""," ")+" "+finalTable.Rows(i)(0).ToString.Split(","c)(2).Split("/"c)(0).Replace("""","")]</InArgument>
                               </Assign.Value>
                             </Assign>
                             <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{ numeroTarjeta.ToString , detalleTarjeta.ToString , nombreTarjeta.ToString }]" DataTable="[tarjetasDetalles]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="262,22" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
