@@ -109,6 +109,7 @@
               <ui:FilterDataTable.SelectColumns>
                 <scg:List x:TypeArguments="InArgument" Capacity="4">
                   <InArgument x:TypeArguments="x:Int32">[2]</InArgument>
+                  <InArgument x:TypeArguments="x:Int32">[3]</InArgument>
                 </scg:List>
               </ui:FilterDataTable.SelectColumns>
             </ui:FilterDataTable>
@@ -128,8 +129,11 @@
                 <InArgument x:TypeArguments="x:String" x:Key="in_empleado">
                   <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="tempTarjetaDetalle(0)(0).ToString" />
                 </InArgument>
-                <InArgument x:TypeArguments="sd:DataTable" x:Key="out_detallesEmpleado">
-                  <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="detalleEmpleado" />
+                <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_detallesEmpleado">
+                  <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="detalleEmpleado" />
+                </OutArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_empleadoApellido">
+                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="tempTarjetaDetalle(0)(1).ToString" />
                 </InArgument>
               </ui:InvokeWorkflowFile.Arguments>
               <sap:WorkflowViewStateService.ViewState>
