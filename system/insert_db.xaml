@@ -125,7 +125,9 @@
                 <InArgument x:TypeArguments="ui:DatabaseConnection" x:Key="in_connection_db">
                   <mva:VisualBasicValue x:TypeArguments="ui:DatabaseConnection" ExpressionText="in_connection_db" />
                 </InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="in_empleado" />
+                <InArgument x:TypeArguments="x:String" x:Key="in_empleado">
+                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="tempTarjetaDetalle(0)(0).ToString" />
+                </InArgument>
                 <InArgument x:TypeArguments="sd:DataTable" x:Key="out_detallesEmpleado">
                   <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="detalleEmpleado" />
                 </InArgument>
