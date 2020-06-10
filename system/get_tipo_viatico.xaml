@@ -70,7 +70,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:ExecuteQuery ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DataTable="[out_viatico]" DisplayName="Execute Query" ExistingDbConnection="[in_connection_db]" sap:VirtualizedContainerService.HintSize="334,88" sap2010:WorkflowViewState.IdRef="ExecuteQuery_1" Sql="[&quot;select * from arvtmviaticos where no_cia = '01'  and ind_general = 'S' and descripcion like UPPER('%'&quot;+in_detalle+&quot;'%')&quot;]">
+    <ui:ExecuteQuery ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DataTable="[out_viatico]" DisplayName="Execute Query" ExistingDbConnection="[in_connection_db]" sap:VirtualizedContainerService.HintSize="334,88" sap2010:WorkflowViewState.IdRef="ExecuteQuery_1" Sql="[&quot;select * from arvtmviaticos where no_cia = '01'  and ind_general = 'S' and descripcion like UPPER('%&quot;+in_detalle+&quot;%')&quot;]">
       <ui:ExecuteQuery.Parameters>
         <scg:Dictionary x:TypeArguments="x:String, Argument" />
       </ui:ExecuteQuery.Parameters>
