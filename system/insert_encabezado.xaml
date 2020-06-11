@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="insert_encabezado" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="insert_encabezado" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_connection_db" Type="InArgument(ui:DatabaseConnection)" />
     <x:Property Name="in_pNO_CIA" Type="InArgument(x:String)" />
@@ -14,7 +14,7 @@
   <sap:VirtualizedContainerService.HintSize>1012,619</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>insert_encabezado_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <sco:Collection x:TypeArguments="x:String">
+    <scg:List x:TypeArguments="x:String" Capacity="44">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -37,10 +37,11 @@
       <x:String>UiPath.Core.Activities</x:String>
       <x:String>System.Windows.Markup</x:String>
       <x:String>UiPath.Database</x:String>
-    </sco:Collection>
+      <x:String>System.Xml.Serialization</x:String>
+    </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <sco:Collection x:TypeArguments="AssemblyReference">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="24">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -65,15 +66,18 @@
       <AssemblyReference>System.ServiceModel</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
-    </sco:Collection>
+    </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="insert_encabezado" sap:VirtualizedContainerService.HintSize="376,180" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="sd:DataTable" Name="resultadoInsert" />
+    </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:ExecuteQuery ContinueOnError="{x:Null}" DataTable="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DisplayName="Execute Query" ExistingDbConnection="[in_connection_db]" sap:VirtualizedContainerService.HintSize="334,88" sap2010:WorkflowViewState.IdRef="ExecuteQuery_1" Sql="[&quot;Insert into NAF47.ARVTENCEMPLE  (NO_CIA, NO_DOCU, NO_EMPLE,   AREA, DEPTO, DIVISION, ESTADO, IND_PAGO, NO_SECUENCIA,  IND_CHEQUE, USER_ACTUALIZA,FECHA_ACTUALIZA,NO_TRANSA_RECIBO,FECHA, CENTRO_COSTOS, IND_TARJETA) Values  ('&quot;+in_pNO_CIA.ToString+&quot;', consecutivo.VT('&quot;+in_pNO_CIA.ToString+&quot;', to_char(sysdate,'yyyy'), to_number(to_char(sysdate,'MM')),'01','V'), '&quot;+in_NO_EMPLE.ToString+&quot;', '&quot;+in_AREA.ToString+&quot;', '&quot;+in_DEPTO.ToString+&quot;', '&quot;+in_DIVISION.ToString+&quot;', 'A', 'S', TO_CHAR(SYSDATE,'RRRRMM'),'S', 'TARJETAS',SYSDATE,TO_CHAR(SYSDATE,'RRRRMM'),SYSDATE, '&quot;+in_CENTRO_COSTOS.ToString+&quot;', 'S')&quot;]">
+    <ui:ExecuteQuery ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DataTable="[resultadoInsert]" DisplayName="Execute Query" ExistingDbConnection="[in_connection_db]" sap:VirtualizedContainerService.HintSize="334,88" sap2010:WorkflowViewState.IdRef="ExecuteQuery_1" Sql="[&quot;Insert into NAF47.ARVTENCEMPLE  (NO_CIA, NO_DOCU, NO_EMPLE,   AREA, DEPTO, DIVISION, ESTADO, IND_PAGO, NO_SECUENCIA,  IND_CHEQUE, USER_ACTUALIZA,FECHA_ACTUALIZA,NO_TRANSA_RECIBO,FECHA, CENTRO_COSTOS, IND_TARJETA) Values  ('&quot;+in_pNO_CIA.ToString+&quot;', consecutivo.VT('&quot;+in_pNO_CIA.ToString+&quot;', to_char(sysdate,'yyyy'), to_number(to_char(sysdate,'MM')),'01','V'), '&quot;+in_NO_EMPLE.ToString+&quot;', '&quot;+in_AREA.ToString+&quot;', '&quot;+in_DEPTO.ToString+&quot;', '&quot;+in_DIVISION.ToString+&quot;', 'A', 'S', TO_CHAR(SYSDATE,'RRRRMM'),'S', 'TARJETAS',SYSDATE,TO_CHAR(SYSDATE,'RRRRMM'),SYSDATE, '&quot;+in_CENTRO_COSTOS.ToString+&quot;', 'S')&quot;]">
       <ui:ExecuteQuery.Parameters>
         <scg:Dictionary x:TypeArguments="x:String, Argument" />
       </ui:ExecuteQuery.Parameters>
