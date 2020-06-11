@@ -217,16 +217,16 @@
                                 <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="viatico(0)(1).ToString" />
                               </InArgument>
                               <InArgument x:TypeArguments="x:String" x:Key="in_pVALOR">
-                                <Literal x:TypeArguments="x:String">100</Literal>
+                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="row.Item(18).ToString" />
                               </InArgument>
                               <InArgument x:TypeArguments="x:String" x:Key="in_CTA_GASTOS">
                                 <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="viatico(0)(4).ToString" />
                               </InArgument>
                               <InArgument x:TypeArguments="x:String" x:Key="in_vMONTO">
-                                <Literal x:TypeArguments="x:String">200</Literal>
+                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="row.Item(18).ToString" />
                               </InArgument>
                               <InArgument x:TypeArguments="x:String" x:Key="in_vIVA">
-                                <Literal x:TypeArguments="x:String">100</Literal>
+                                <Literal x:TypeArguments="x:String">0</Literal>
                               </InArgument>
                             </ui:InvokeWorkflowFile.Arguments>
                             <sap:WorkflowViewStateService.ViewState>
