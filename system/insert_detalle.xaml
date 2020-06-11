@@ -1,11 +1,18 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="insert_detalle" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_connection_db" Type="InArgument(ui:DatabaseConnection)" />
+    <x:Property Name="in_pNO_CIA" Type="InArgument(x:String)" />
+    <x:Property Name="in_pNO_DOCU" Type="InArgument(x:String)" />
+    <x:Property Name="in_CODIGO" Type="InArgument(x:String)" />
+    <x:Property Name="in_pVALOR" Type="InArgument(x:String)" />
+    <x:Property Name="in_CTA_GASTOS" Type="InArgument(x:String)" />
+    <x:Property Name="in_vMONTO" Type="InArgument(x:String)" />
+    <x:Property Name="in_vIVA" Type="InArgument(x:String)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1012,726</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1012,619</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>insert_detalle_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -52,6 +59,12 @@
       <AssemblyReference>UiPath.System.Activities</AssemblyReference>
       <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Database</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.CV</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="insert_detalle" sap:VirtualizedContainerService.HintSize="376,180" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -60,7 +73,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:ExecuteQuery ContinueOnError="{x:Null}" DataTable="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DisplayName="Execute Query" ExistingDbConnection="[in_connection_db]" sap:VirtualizedContainerService.HintSize="334,88" sap2010:WorkflowViewState.IdRef="ExecuteQuery_1" Sql="INSERT INTO ARVTDETEMPLE&#xD;&#xA;(NO_CIA,NO_DOCU,CODIGO,MONTO,CTA_GASTOS,OBSERVACION,IVA)&#xD;&#xA;VALUES&#xD;&#xA;(pNO_CIA, pNO_DOCU,cTIPO.CODIGO,pVALOR,cTIPO.CTA_GASTOS,vMONTO/*MONTO CANCELADO SIN IVA*/,vIVA/*MONTO DE IVA PAGADO*/);">
+    <ui:ExecuteQuery ContinueOnError="{x:Null}" DataTable="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DisplayName="Execute Query" ExistingDbConnection="[in_connection_db]" sap:VirtualizedContainerService.HintSize="334,88" sap2010:WorkflowViewState.IdRef="ExecuteQuery_1" Sql="[&quot;INSERT INTO ARVTDETEMPLE (NO_CIA,NO_DOCU,CODIGO,MONTO,CTA_GASTOS,OBSERVACION,IVA) VALUES ('&quot;+in_pNO_CIA.ToString+&quot;', consecutivo.VT('&quot;+in_pNO_CIA+&quot;', to_char(sysdate,'yyyy'), to_number(to_char(sysdate,'MM')),'01','V') ,'&quot;+in_CODIGO.ToString+&quot;','&quot;+in_pVALOR.ToString+&quot;','&quot;+in_CTA_GASTOS+&quot;','&quot;+in_vMONTO.ToString+&quot;','&quot;+in_vIVA.ToString+&quot;');&quot;]">
       <ui:ExecuteQuery.Parameters>
         <scg:Dictionary x:TypeArguments="x:String, Argument" />
       </ui:ExecuteQuery.Parameters>

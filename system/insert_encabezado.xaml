@@ -63,6 +63,8 @@
       <AssemblyReference>UiPath.Mail</AssemblyReference>
       <AssemblyReference>UiPath.CV</AssemblyReference>
       <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="insert_encabezado" sap:VirtualizedContainerService.HintSize="376,180" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -71,7 +73,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:ExecuteQuery ContinueOnError="{x:Null}" DataTable="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DisplayName="Execute Query" ExistingDbConnection="[in_connection_db]" sap:VirtualizedContainerService.HintSize="334,88" sap2010:WorkflowViewState.IdRef="ExecuteQuery_1" Sql="[&quot;Insert into NAF47.ARVTENCEMPLE  (NO_CIA, NO_DOCU, NO_EMPLE,   AREA, DEPTO, DIVISION, ESTADO, IND_PAGO, NO_SECUENCIA,  IND_CHEQUE, USER_ACTUALIZA,FECHA_ACTUALIZA,NO_TRANSA_RECIBO,FECHA, CENTRO_COSTOS, IND_TARJETA) Values  (pNO_CIA, consecutivo.VT(&quot;+in_pNO_CIA.ToString+&quot;, to_char(sysdate,'yyyy'), to_number(to_char(sysdate,'MM')),'01','V'), &quot;+in_NO_EMPLE.ToString+&quot;, &quot;+in_AREA.ToString+&quot;, &quot;+in_DEPTO.ToString+&quot;, &quot;+in_DIVISION.ToString+&quot;, 'A', 'S', TO_CHAR(SYSDATE,'RRRRMM'),' 'S', 'TARJETAS',SYSDATE,TO_CHAR(SYSDATE,'RRRRMM'),SYSDATE, &quot;+in_CENTRO_COSTOS.ToString+&quot;, 'S')&quot;]">
+    <ui:ExecuteQuery ContinueOnError="{x:Null}" DataTable="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DisplayName="Execute Query" ExistingDbConnection="[in_connection_db]" sap:VirtualizedContainerService.HintSize="334,88" sap2010:WorkflowViewState.IdRef="ExecuteQuery_1" Sql="[&quot;Insert into NAF47.ARVTENCEMPLE  (NO_CIA, NO_DOCU, NO_EMPLE,   AREA, DEPTO, DIVISION, ESTADO, IND_PAGO, NO_SECUENCIA,  IND_CHEQUE, USER_ACTUALIZA,FECHA_ACTUALIZA,NO_TRANSA_RECIBO,FECHA, CENTRO_COSTOS, IND_TARJETA) Values  ('&quot;+in_pNO_CIA.ToString+&quot;', consecutivo.VT('&quot;+in_pNO_CIA.ToString+&quot;', to_char(sysdate,'yyyy'), to_number(to_char(sysdate,'MM')),'01','V'), '&quot;+in_NO_EMPLE.ToString+&quot;', '&quot;+in_AREA.ToString+&quot;', '&quot;+in_DEPTO.ToString+&quot;', '&quot;+in_DIVISION.ToString+&quot;', 'A', 'S', TO_CHAR(SYSDATE,'RRRRMM'),'S', 'TARJETAS',SYSDATE,TO_CHAR(SYSDATE,'RRRRMM'),SYSDATE, '&quot;+in_CENTRO_COSTOS.ToString+&quot;', 'S')&quot;]">
       <ui:ExecuteQuery.Parameters>
         <scg:Dictionary x:TypeArguments="x:String, Argument" />
       </ui:ExecuteQuery.Parameters>
